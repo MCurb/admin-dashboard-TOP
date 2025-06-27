@@ -55,29 +55,71 @@ h1, h2, h3, h4, h5, h6 {
   isolation: isolate;
 }
 
+body {
+    height: 100vh;
+    background-color: gray;
+    color: white;
+}
 
 .container {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 1fr 2fr 1fr;
+    grid-template-columns: 20vw 1fr;
+    grid-template-rows: 10vh 80vh 10vh;
     grid-template-areas: 
     "sidebar header"
     "sidebar content"
-    "footer footer";
+    "sidebar footer";
+    gap: 5px;
 }
 
 .header {
     grid-area: header;
     border: 1px solid black;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.header .group1 {
+    display: grid;
+    grid-template-columns: 30px 1fr;
+}
+
+.header .group2 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
 }
 
 .sidebar {
     grid-area: sidebar;
     border: 1px solid black;
+    background-color: rgb(65, 65, 83);
+    display: grid;
 }
 
 .data-content {
     grid-area: content;
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.data-content .position {
+    grid-column: span 3;
+}
+
+.data-content .recent-users {
+    grid-column: 2 / 4;
+}
+
+.data-content .position .exact-position{
+    display: flex;
+    gap: 5px;
+}
+
+.data-content div {
     border: 1px solid black;
 }
 
