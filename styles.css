@@ -1,7 +1,9 @@
 /* Modern CSS Reset */
 
 /* 1. Use a more-intuitive box-sizing model */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -25,18 +27,31 @@ body {
 }
 
 /* 6. Improve media defaults */
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
 
 /* 7. Inherit fonts for form controls */
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
 /* 8. Avoid text overflows */
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
 }
 
@@ -44,86 +59,152 @@ p, h1, h2, h3, h4, h5, h6 {
 p {
   text-wrap: pretty;
 }
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   text-wrap: balance;
 }
 
 /*
   10. Create a root stacking context
 */
-#root, #__next {
+#root,
+#__next {
   isolation: isolate;
 }
 
 body {
-    height: 100vh;
-    background-color: gray;
-    color: white;
+  height: 100vh;
+  background-color: rgb(248, 249, 250);
+  font-family: "roboto";
 }
 
 .container {
-    display: grid;
-    grid-template-columns: 20vw 1fr;
-    grid-template-rows: 10vh 80vh 10vh;
-    grid-template-areas: 
+  display: grid;
+  grid-template-columns: 20vw 1fr;
+  grid-template-rows: 10vh 80vh 10vh;
+  grid-template-areas:
     "sidebar header"
     "sidebar content"
     "sidebar footer";
-    gap: 5px;
+  gap: 5px;
 }
 
+/* Header */
+
 .header {
-    grid-area: header;
-    border: 1px solid black;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
+  grid-area: header;
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
 }
 
 .header .group1 {
-    display: grid;
-    grid-template-columns: 30px 1fr;
+  display: grid;
+  grid-template-columns: 30px 1fr;
 }
 
 .header .group2 {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 5px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
 }
+
+/* Sidebar */
 
 .sidebar {
-    grid-area: sidebar;
-    border: 1px solid black;
-    background-color: rgb(65, 65, 83);
-    display: grid;
+  grid-area: sidebar;
+  border: 1px solid black;
+  background-color: #3b4b62;
+  display: grid;
+  grid-template-rows: repeat(5, fit-content(5px));
+  color: hsl(218, 16%, 60%);
+  gap: 20px;
 }
 
+.sidebar .group :last-child > div {
+  padding: 0 20px 0 20px;
+}
+
+.sidebar .group :last-child > div:hover {
+  color: hsl(218, 16%, 85%);
+  cursor: pointer;
+}
+
+.sidebar .logo-name {
+  font-size: 20px;
+  font-weight: 500;
+  color: hsl(218, 16%, 70%);
+  display: grid;
+  grid-template-columns: repeat(2, fit-content(100px));
+  padding: 20px 20px 0 20px;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar .group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar .group > :first-child {
+  color: hsl(218, 16%, 80%);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 0 20px 0 20px;
+}
+
+.sidebar .group div:last-of-type > div {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+}
+
+.sidebar .group > :last-child {
+  display: grid;
+  gap: 12px;
+}
+
+.sidebar .group :last-child > .selected {
+  background-color: hsl(219, 23%, 28%);
+  padding: 8px 20px 8px 20px;
+  border-left: 3px solid hsl(199, 100%, 50%);
+}
+
+/* Content */
+
 .data-content {
-    grid-area: content;
-    border: 1px solid black;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    gap: 20px;
+  grid-area: content;
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 20px;
 }
 
 .data-content .position {
-    grid-column: span 3;
+  grid-column: span 3;
 }
 
 .data-content .recent-users {
-    grid-column: 2 / 4;
+  grid-column: 2 / 4;
 }
 
-.data-content .position .exact-position{
-    display: flex;
-    gap: 5px;
+.data-content .position .exact-position {
+  display: flex;
+  gap: 5px;
 }
 
 .data-content div {
-    border: 1px solid black;
+  border: 1px solid black;
 }
 
+/* Footer */
+
 .footer {
-    grid-area: footer;
-    border: 1px solid black;
+  grid-area: footer;
+  border: 1px solid black;
 }
