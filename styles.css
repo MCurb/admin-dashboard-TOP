@@ -78,18 +78,18 @@ h6 {
 
 body {
   height: 100vh;
-  background-color: rgb(248, 249, 250);
+  background-color: #e2e8f0;
   font-family: "roboto";
 }
 
 .container {
   display: grid;
-  grid-template-columns: 20vw 1fr;
+  grid-template-columns: minmax(max-content, 20vw) 1fr;
   grid-template-rows: 10vh 80vh 10vh;
   grid-template-areas:
     "sidebar header"
     "sidebar content"
-    "sidebar footer";
+    "sidebar content";
   gap: 5px;
 }
 
@@ -181,21 +181,93 @@ body {
   border: 1px solid black;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-rows: max-content max-content 1fr 1fr 1fr;
   gap: 20px;
+  padding: 20px;
+  overflow-x: scroll;
 }
 
 .data-content .position {
   grid-column: span 3;
 }
 
-.data-content .recent-users {
-  grid-column: 2 / 4;
-}
-
 .data-content .position .exact-position {
   display: flex;
   gap: 5px;
+}
+
+.data-content .projects-header {
+  grid-column: 1 / span 2;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.data-content .announce-header {
+  grid-column: 3 / 4;
+  grid-row: 2;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.data-content .side-announcements {
+  grid-column: 3 / 4;
+  grid-row: 3 / 6;
+  display: grid;
+  gap: 15px;
+}
+
+.data-content .project {
+  display: grid;
+  grid-template-rows: max-content 2fr max-content;
+  background-color: rgb(255, 255, 255);
+  padding: 16px;
+  padding-left: 24px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.project::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 8px;
+  background: linear-gradient(to bottom, #1dc4e9, #2ce0b5);
+  border-radius: 8px 0 0 8px;
+}
+
+.project > :first-child {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.project p {
+  margin-bottom: 16px;
+  color: #636363;
+  font-size: 18px;
+}
+
+.data-content .icons {
+  display: grid;
+  grid-template-columns: max-content max-content max-content;
+  gap: 16px;
+  justify-content: end;
+  padding: 0px 16px 16px 0;
+}
+
+.side-announcements .announcement-column {
+  display: grid;
+}
+
+.trending-column > div {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+.trending-column img {
+  height: 50px;
+  border-radius: 50%;
 }
 
 .data-content div {
