@@ -103,7 +103,6 @@ body {
   grid-template-columns: 1fr 1fr;
   align-items: center;
   padding: 32px;
-  position: static;
 }
 
 .header .group1 {
@@ -149,7 +148,7 @@ input[type="search"]:focus {
   transform: translate(40%, -40%);
   background-color: #20e8b3;
   color: white;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: bold;
   border-radius: 9999px;
   height: 20px;
@@ -185,7 +184,7 @@ input[type="search"]:focus {
 }
 
 .sidebar .logo-name {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 500;
   color: hsl(218, 16%, 80%);
   display: grid;
@@ -203,7 +202,7 @@ input[type="search"]:focus {
 
 .sidebar .group > :first-child {
   color: hsl(218, 16%, 80%);
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 600;
   padding: 0 20px 0 20px;
 }
@@ -241,7 +240,7 @@ input[type="search"]:focus {
 
 .position > div:first-child {
   font-weight: 600;
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .data-content .position .exact-position {
@@ -261,14 +260,14 @@ input[type="search"]:focus {
 
 .data-content .projects-header {
   grid-column: 1 / span 2;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 600;
 }
 
 .data-content .announce-header {
   grid-column: 3 / 4;
   grid-row: 2;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 600;
 }
 
@@ -311,14 +310,14 @@ input[type="search"]:focus {
 }
 
 .project > :first-child {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 600;
 }
 
 .project p {
   margin-bottom: 16px;
   color: #636363;
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 .data-content .icons {
@@ -341,7 +340,7 @@ input[type="search"]:focus {
 
 .announcement-column div > :first-child {
   font-weight: 600;
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 .announcement-column p {
@@ -361,7 +360,7 @@ input[type="search"]:focus {
 }
 
 .trending-header {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 16px;
 }
