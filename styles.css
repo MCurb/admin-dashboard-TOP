@@ -205,6 +205,8 @@ input[type="search"]:focus {
 
   /* Box Model */
   height: 100vh;
+  overflow: auto;
+  padding-bottom: 20px;
   box-shadow: 4px 0 12px rgba(0, 0, 0, 0.25);
 
   /* Visuals */
@@ -270,8 +272,8 @@ input[type="search"]:focus {
 .main-content {
   grid-area: content;
   display: grid;
-  grid-template-columns: 2fr 2fr 34ch;
-  grid-template-rows: max-content max-content 1fr 1fr 1fr;
+  grid-template-columns: 2fr minmax(29ch, 34ch);
+  grid-template-rows: max-content max-content auto;
   gap: 24px;
   padding: 0 24px 24px 24px;
 }
@@ -300,22 +302,32 @@ input[type="search"]:focus {
 /* Layout Containers*/
 
 .main-content .projects-header {
-  grid-column: 1 / span 2;
+  grid-column: 1 / 2;
 }
 
 .main-content .announcements-header {
-  grid-column: 3 / 4;
+  grid-column: 2 / 3;
   grid-row: 2;
 }
 
+.main-content .projects-container {
+  grid-column: 1 / 2;
+}
+
 .main-content .announcements-section {
-  grid-column: 3 / 4;
-  grid-row: 3 / 6;
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
   display: grid;
   gap: 24px;
 }
 
-/* Project Boxes */
+/* Project Container and Boxes */
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 24px;
+}
 
 .main-content .project {
   /* Positioning */
